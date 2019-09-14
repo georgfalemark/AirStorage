@@ -36,9 +36,25 @@ namespace AirStorage
 
 
 
-            services.AddDbContext<AppDbContext>(options =>
-                    options.UseSqlServer(
-                        Configuration.GetConnectionString("DefaultConnection")));
+            //För utvecklingsmiljön
+            //services.AddDbContext<AppDbContext>(options =>
+            //        options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+
+
+            if (Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "Production")
+                services.AddDbContext<AppDbContext>(options =>
+                        options.UseSqlServer(Configuration.GetConnectionString("MyDbConnection")));
+            else
+                services.AddDbContext<AppDbContext>(options =>
+                        options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            //services.AddDbContext<AppDbContext>(options =>
+            //        options.UseSqlite("Data Source=localdatabase.db"));
+
+            // Automatically perform database migration
+            services.BuildServiceProvider().GetService<AppDbContext>().Database.Migrate();
+
+
 
             services.AddDefaultIdentity<IdentityUser>()
                     .AddEntityFrameworkStores<AppDbContext>();
