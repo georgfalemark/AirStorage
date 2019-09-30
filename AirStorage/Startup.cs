@@ -36,24 +36,20 @@ namespace AirStorage
 
 
 
-            //För utvecklingsmiljön
-            //services.AddDbContext<AppDbContext>(options =>
-            //        options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
 
 
-            if (Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "Production")
+            //if (Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "Production")
                 services.AddDbContext<AppDbContext>(options =>
                         options.UseSqlServer(Configuration.GetConnectionString("MyDbConnection")));
-            else
-                services.AddDbContext<AppDbContext>(options =>
-                        options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-            //services.AddDbContext<AppDbContext>(options =>
-            //        options.UseSqlite("Data Source=localdatabase.db"));
+            //else
+            //    services.AddDbContext<AppDbContext>(options =>
+            //            options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+
 
             // Automatically perform database migration
             services.BuildServiceProvider().GetService<AppDbContext>().Database.Migrate();
-
 
 
             services.AddDefaultIdentity<IdentityUser>()
@@ -61,8 +57,11 @@ namespace AirStorage
 
 
 
+            
 
 
+            //TODO
+            //string facebookAppId = Configuration["Authentication:Facebook:AppId"];
 
 
             //TODO
@@ -84,12 +83,9 @@ namespace AirStorage
             //för att koppla interface mot klassen
             //services.AddTransient<ITestInterface, TestRepository>();
 
-
             //TODO
             //services.AddTransient<IEmailSender, EmailSender>();
             //services.AddSingleton<IEmailConfiguration>(Configuration.GetSection("EmailConfiguration").Get<EmailConfiguration>());
-
-
 
 
 

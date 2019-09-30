@@ -24,6 +24,7 @@ bin/
 obj/
 TestResults/
 Migrations/
+Airstorage/appsettings.Production.json
 ###################
 # Web publish log #
 ###################
