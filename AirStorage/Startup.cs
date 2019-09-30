@@ -39,12 +39,12 @@ namespace AirStorage
 
 
 
-            //if (Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "Production")
+            if (Configuration["Environment:Name"] == "PRODUCTION")  //Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "Production"
                 services.AddDbContext<AppDbContext>(options =>
                         options.UseSqlServer(Configuration.GetConnectionString("MyDbConnection")));
-            //else
-            //    services.AddDbContext<AppDbContext>(options =>
-            //            options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            else
+                services.AddDbContext<AppDbContext>(options =>
+                        options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
 
 
@@ -57,7 +57,7 @@ namespace AirStorage
 
 
 
-            
+
 
 
             //TODO
