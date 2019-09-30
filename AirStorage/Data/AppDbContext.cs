@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Domain.Models.Entities;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -10,7 +11,7 @@ namespace AirStorage.Data
 {
     public class AppDbContext : IdentityDbContext<IdentityUser>
     {
-
+        public DbSet<Storage> Storages { get; set; }
 
 
         public AppDbContext(DbContextOptions<AppDbContext> options)
