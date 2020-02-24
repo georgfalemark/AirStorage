@@ -64,7 +64,17 @@ namespace AirStorage
             //string facebookAppId = Configuration["Authentication:Facebook:AppId"];
 
 
+
             //TODO
+            services.AddAuthentication()
+                .AddGoogle(options =>
+                {
+                    IConfigurationSection googleAuthNSection =
+                        Configuration.GetSection("Authentication:Google");
+
+                    options.ClientId = googleAuthNSection["ClientId"];
+                    options.ClientSecret = googleAuthNSection["ClientSecret"];
+                });
             //services.AddAuthentication().AddFacebook(facebookOptions =>
             //{
             //    facebookOptions.AppId = Configuration["Authentication:Facebook:AppId"];
