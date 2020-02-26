@@ -63,12 +63,29 @@
                 {
                     <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal">
                         <div>
-                            <p>
-                                @foreach (var provider in Model.ExternalLogins)
+                            @foreach (var provider in Model.ExternalLogins)
+                            {
+                                if (@provider.DisplayName == "Google")
+                                {
+                                    <button class="google-btn"
+                                            type="submit"
+                                            name="provider"
+                                            value="@provider.Name"
+                                            title="Log in using your @provider.DisplayName account">
+                                        <div class="google-icon-wrapper">
+                                            <img class="google-icon"
+                                                 src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" />
+                                        </div>
+                                        <p class="btn-text"><b>Sign in with google</b></p>
+                                    </button>
+                                }
+                                else
                                 {
                                     <button type="submit" class="btn btn-primary" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.DisplayName</button>
                                 }
-                            </p>
+                                <br />
+                                <br />
+                            }
                         </div>
                     </form>
                 }

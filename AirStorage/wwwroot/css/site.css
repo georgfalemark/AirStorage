@@ -2,55 +2,129 @@
 for details on configuring this project to bundle and minify static web assets. */
 
 a.navbar-brand {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
 }
 
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
+
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
 
 .border-top {
-  border-top: 1px solid #e5e5e5;
+    border-top: 1px solid #e5e5e5;
 }
+
 .border-bottom {
-  border-bottom: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
 }
 
 .box-shadow {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
 }
 
 button.accept-policy {
-  font-size: 1rem;
-  line-height: inherit;
+    font-size: 1rem;
+    line-height: inherit;
 }
 
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
 body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
 }
+
 .footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  white-space: nowrap;
-  /* Set the fixed height of the footer here */
-  height: 60px;
-  line-height: 60px; /* Vertically center the text there */
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+    line-height: 60px; /* Vertically center the text there */
 }
+
+
+
+
+/*GOOGLE LOGIN BUTTON STYLES*/
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:500);
+
+.google-btn {
+    width: 184px;
+    height: 42px;
+    background-color: #4285f4;
+    border-radius: 2px;
+    box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.25);
+    padding: 0px 0px 10px 0px;
+    font-family: Arial, Verdana;
+    background-position: 8px 8px;
+    background-repeat: no-repeat;
+}
+
+    .google-btn .google-icon-wrapper {
+        position: absolute;
+        margin-top: 1px;
+        margin-left: 1px;
+        margin-bottom: 1px;
+        width: 36px;
+        height: 36px;
+        border-radius: 2px;
+        background-color: #fff;
+    }
+
+    .google-btn .google-icon {
+        position: absolute;
+        margin-top: 9px;
+        margin-left: -9px;
+        width: 18px;
+        height: 18px;
+    }
+
+    .google-btn .btn-text {
+        float: right;
+        margin: 9px 11px 0 0;
+        color: #fff;
+        font-size: 14px;
+        letter-spacing: 0.2px;
+        font-family: "Roboto";
+    }
+
+    .google-btn:hover {
+        box-shadow: 0 0 6px #4285f4;
+    }
+
+    .google-btn:active {
+        background: #1669F2;
+    }
+
+/*END OF GOOGLE LOGIN BUTTON STYLES*/
+
+
+
+
+
+
+
+
+
+/*FACEBOOK LOGIN BUTTON STYLES*/
+
+
+
+/*END OF FACEBOOK LOGIN BUTTON STYLES*/
