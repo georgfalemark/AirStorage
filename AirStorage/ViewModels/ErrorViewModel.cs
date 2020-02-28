@@ -1,6 +1,6 @@
 using System;
 
-namespace AirStorage.Models
+namespace AirStorage.ViewModels
 {
     public class ErrorViewModel
     {

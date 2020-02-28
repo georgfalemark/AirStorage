@@ -25,4 +25,10 @@
     <ProjectReference Include="..\AirStorage.Domain\AirStorage.Domain.csproj" />
   </ItemGroup>
 
+
+  <ItemGroup>
+    <Folder Include="Data\DbContext\" />
+    <Folder Include="Data\Repositories\Impl\" />
+  </ItemGroup>
+
 </Project>
