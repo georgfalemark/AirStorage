@@ -27,7 +27,6 @@
 
 
   <ItemGroup>
-    <Folder Include="Data\DbContext\" />
     <Folder Include="Data\Repositories\Impl\" />
   </ItemGroup>
 
