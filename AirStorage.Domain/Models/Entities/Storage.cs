@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
-namespace Domain.Models.Entities
+namespace AirStorage.Domain.Models.Entities
 {
     public class Storage
     {
@@ -55,13 +57,5 @@ namespace Domain.Models.Entities
 
 
         public decimal PricePerMonth { get; set; }
-
-
-
-
-
-
-
-
     }
 }

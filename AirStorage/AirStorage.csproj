@@ -22,7 +22,7 @@
 
 
   <ItemGroup>
-    <ProjectReference Include="..\Domain\Domain.csproj" />
+    <ProjectReference Include="..\AirStorage.Domain\AirStorage.Domain.csproj" />
   </ItemGroup>
 
 </Project>
