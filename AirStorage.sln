@@ -5,17 +5,25 @@ VisualStudioVersion = 16.0.29306.81
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AirStorage", "AirStorage\AirStorage.csproj", "{6A2295E2-2084-43EF-8F3F-E5EEEA567624}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmailSender", "EmailSender\EmailSender.csproj", "{E6D6F72F-5A52-4F2B-8D1B-54852ED75A80}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmailSender", "EmailSender\EmailSender.csproj", "{E6D6F72F-5A52-4F2B-8D1B-54852ED75A80}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmailSender.Test", "EmailSender.Test\EmailSender.Test.csproj", "{51F94F4F-299A-4ECB-B5E6-7A12DE16F946}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmailSender.Test", "EmailSender.Test\EmailSender.Test.csproj", "{51F94F4F-299A-4ECB-B5E6-7A12DE16F946}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistence", "Persistence\Persistence.csproj", "{523BEBB0-CC7E-482C-ADEE-CF932AF68EC9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Persistence", "Persistence\Persistence.csproj", "{523BEBB0-CC7E-482C-ADEE-CF932AF68EC9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistence.Test", "Persistence.Test\Persistence.Test.csproj", "{1FF87E3B-342C-4DE6-818C-A4981F062D40}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Persistence.Test", "Persistence.Test\Persistence.Test.csproj", "{1FF87E3B-342C-4DE6-818C-A4981F062D40}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{857CC55A-DB33-4C97-996C-D6BC75A483A9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{857CC55A-DB33-4C97-996C-D6BC75A483A9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain.Test", "Domain.Test\Domain.Test.csproj", "{DEA87E98-848A-4CEA-842B-DCDD33A99E64}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain.Test", "Domain.Test\Domain.Test.csproj", "{DEA87E98-848A-4CEA-842B-DCDD33A99E64}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{8238106C-8C0C-425C-AB71-D12E2A3B6726}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirStorage.Domain.Tests", "Tests\AirStorage.Domain.Tests\AirStorage.Domain.Tests.csproj", "{32D9088F-D7EC-48AB-8EF9-F49309A87AC4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmailSender.Tests", "Tests\EmailSender.Tests\EmailSender.Tests.csproj", "{8156D7B3-5C32-4DD0-BC11-97A68609842D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirStorage.Data.Tests", "Tests\AirStorage.Data.Tests\AirStorage.Data.Tests.csproj", "{E2CC00ED-C364-4B7C-9FDF-104AA46D3B3C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,9 +59,26 @@ Global
 		{DEA87E98-848A-4CEA-842B-DCDD33A99E64}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DEA87E98-848A-4CEA-842B-DCDD33A99E64}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DEA87E98-848A-4CEA-842B-DCDD33A99E64}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32D9088F-D7EC-48AB-8EF9-F49309A87AC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32D9088F-D7EC-48AB-8EF9-F49309A87AC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32D9088F-D7EC-48AB-8EF9-F49309A87AC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32D9088F-D7EC-48AB-8EF9-F49309A87AC4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8156D7B3-5C32-4DD0-BC11-97A68609842D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8156D7B3-5C32-4DD0-BC11-97A68609842D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8156D7B3-5C32-4DD0-BC11-97A68609842D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8156D7B3-5C32-4DD0-BC11-97A68609842D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2CC00ED-C364-4B7C-9FDF-104AA46D3B3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2CC00ED-C364-4B7C-9FDF-104AA46D3B3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2CC00ED-C364-4B7C-9FDF-104AA46D3B3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2CC00ED-C364-4B7C-9FDF-104AA46D3B3C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{32D9088F-D7EC-48AB-8EF9-F49309A87AC4} = {8238106C-8C0C-425C-AB71-D12E2A3B6726}
+		{8156D7B3-5C32-4DD0-BC11-97A68609842D} = {8238106C-8C0C-425C-AB71-D12E2A3B6726}
+		{E2CC00ED-C364-4B7C-9FDF-104AA46D3B3C} = {8238106C-8C0C-425C-AB71-D12E2A3B6726}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AF997F71-EFC5-4C52-9977-FC7CC064E26D}
