@@ -4,11 +4,15 @@ using System.Linq;
 using System.Threading.Tasks;
 using AirStorage.Data;
 using AirStorage.Data.DbContext;
+using EmailSender.Configuration;
+using EmailSender.Configuration.Impl;
+using EmailSender.Email;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -109,8 +113,8 @@ namespace AirStorage
             //services.AddTransient<ITestInterface, TestRepository>();
 
             //TODO
-            //services.AddTransient<IEmailSender, EmailSender>();
-            //services.AddSingleton<IEmailConfiguration>(Configuration.GetSection("EmailConfiguration").Get<EmailConfiguration>());
+            services.AddTransient<IEmailSender, EmailSenderImpl>();
+            services.AddSingleton<IEmailConfiguration>(Configuration.GetSection("EmailConfiguration").Get<EmailConfiguration>());
 
 
 
