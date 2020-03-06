@@ -1,28 +1,26 @@
-﻿using System.Collections.Generic;
-using Microsoft.AspNetCore.Identity.UI.Services;
-using System.Linq;
+﻿using Microsoft.AspNetCore.Identity.UI.Services;
 using System.Threading.Tasks;
 using EmailSender.Configuration;
-using MimeKit;
-using MimeKit.Text;
 using MailKit.Net.Smtp;
-using System;
+using EmailSender.Helpers;
 
 namespace EmailSender.Email
 {
     public class EmailSenderImpl : IEmailSender
     {
         private readonly IEmailConfiguration _emailConfiguration;
+        private readonly IEmailHelper _emailHelper;
 
-        public EmailSenderImpl(IEmailConfiguration emailConfiguration)
+        public EmailSenderImpl(IEmailConfiguration emailConfiguration, IEmailHelper emailHelper)
         {
             _emailConfiguration = emailConfiguration;
+            _emailHelper = emailHelper;
         }
 
         public async Task SendEmailAsync(string email, string subject, string htmlMessage)
         {
-            var emailMessage = CreateEmailMessage(email, subject, htmlMessage);
-            var message = CreateMimeMessage(emailMessage);
+            var emailMessage = _emailHelper.CreateEmailMessage(email, subject, htmlMessage);
+            var message = _emailHelper.CreateMimeMessage(emailMessage); 
 
             using (var emailClient = new SmtpClient())
             {
@@ -32,29 +30,6 @@ namespace EmailSender.Email
                 emailClient.Send(message);
                 emailClient.Disconnect(true);
             }
-        }
-
-        private MimeMessage CreateMimeMessage(EmailMessage emailMessage)
-        {
-            var message = new MimeMessage();
-            message.To.AddRange(emailMessage.ToAddresses.Select(x => new MailboxAddress(x.Name, x.Address)));
-            message.From.AddRange(emailMessage.FromAddresses.Select(x => new MailboxAddress(x.Name, x.Address)));
-            message.Subject = emailMessage.Subject;
-            message.Body = new TextPart(TextFormat.Html)
-            {
-                Text = emailMessage.Content
-            };
-            return message;
-        }
-
-        private EmailMessage CreateEmailMessage(string email, string subject, string htmlMessage)
-        {
-            var emailMessage = new EmailMessage();
-            emailMessage.ToAddresses = new List<EmailAddress> { new EmailAddress { Address = email } };
-            emailMessage.FromAddresses = new List<EmailAddress> { new EmailAddress { Address = "airstorage.uk@gmail.com", Name = "AirStorage.Noreply" } };
-            emailMessage.Subject = subject;
-            emailMessage.Content = htmlMessage;
-            return emailMessage;
         }
     }
 }
